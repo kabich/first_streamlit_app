@@ -1,5 +1,5 @@
 import streamlit
-streamlit.title('hello world   bfxgfx🥣 🥗 🐔 🥑🍞')
+streamlit.title('hello world 🥣 🥗 🐔 🥑🍞')
 streamlit.header('Breakfast Menu')
 streamlit.text('Omega 3 & Blueberry Oatmeal')
 streamlit.text('Kale, Spinach & Rocket Smoothie')
