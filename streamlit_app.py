@@ -17,16 +17,19 @@ streamlit.header("Fruityvice Fruit Advice!")
 
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
 streamlit.text(fruityvice_response)
+def get_fruit(fruit):
+  fruit_response = requests.get("https://fruityvice.com/api/fruit/" + fruit)
+  fruityvice_normalized = pd.json_normalize(fruit_response.json())
+  return fruityvice_normalized  
 try:
   fruit_choice = streamlit.text_input('What fruit would you like information about?','fruits')
   if not fruit_choice:
     streamlit.error('please select a fruit')
   # write your own comment -what does the next line do? 
   else:
-    fruit_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
-    fruityvice_normalized = pd.json_normalize(fruit_response.json())
+    
     # write your own comment - what does this do?
-    streamlit.dataframe(fruityvice_normalized)
+    streamlit.dataframe(get_fruit(fruit_choice))
 except URLError as e:
   streamlit.error()
 streamlit.stop()
