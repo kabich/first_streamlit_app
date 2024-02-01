@@ -58,7 +58,7 @@ my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 streamlit.header("Fruityvice Fruit Advice 3!")
 def get_fruit_load_list(fruit_choice):
   with my_cnx.cursor() as my_cur:
-    my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+    my_cur.execute("insert into fruit_load_list values ('"+ fruit_choice +"')")
     return my_cur.fetchall()
 
 if streamlit.button('get fruit load list'):
