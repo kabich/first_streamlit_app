@@ -32,7 +32,7 @@ try:
     streamlit.dataframe(get_fruit(fruit_choice))
 except URLError as e:
   streamlit.error()
-streamlit.stop()
+#streamlit.stop()
 
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
