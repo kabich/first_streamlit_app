@@ -56,6 +56,7 @@ fruit_choice = streamlit.text_input('What fruit would you like information about
 my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
 
+streamlit.header("Fruityvice Fruit Advice 3!")
 def get_fruit_load_list():
   with my_cnx.cursor() as my_cur:
     my_cur.execute('select * from pc_rivery_db.public.fruit_load_list')
