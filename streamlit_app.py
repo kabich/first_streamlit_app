@@ -63,8 +63,8 @@ def get_fruit_load_list(fruit_choice):
 
 if streamlit.button('get fruit load list'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-  fruit_choice = streamlit.text_input('What fruit would you like information about?','fruit')
-  get_fruit_load_list(fruit_choice)
+  for fruit_choice in ["jackfruit", "papaya", "guava", "kiwi"]:
+    get_fruit_load_list(fruit_choice)
   
 
 
